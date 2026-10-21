@@ -30,3 +30,10 @@ img, svg { display: block; max-width: 100%; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+/* STEP 02: Temporary route preview only. */
+.preview-main { padding-block: clamp(65px, 10vw, 145px); }
+.preview-tag { margin-bottom: 22px; color: var(--brand-primary); font-size: .75rem; font-weight: 700; letter-spacing: .16em; }
+.preview-main h1 { margin: 0 0 24px; }
+.preview-main p { max-width: 560px; color: var(--brand-muted); }
+.preview-spacer { margin-top: 100px; min-height: 90vh; border-top: 1px solid var(--brand-border); padding-top: 28px; font-size: .7rem; font-weight: 700; letter-spacing: .13em; color: var(--brand-secondary); }
