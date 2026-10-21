@@ -1,28 +1,23 @@
-# MaintyBox — STEP 02: Header & Navigation
+# MaintyBox — STEP 03: Hero Section
 
-Continues STEP 01 without replacing its design tokens, dependencies, or typography.
+Continuation of STEP 02. Contains only an original editorial homepage Hero, with existing Header and minimal route placeholders.
 
-## Run locally (macOS)
-
-Requires Node 20.19+ or 22.12+.
+## Run on macOS
 
 ```bash
 npm install
 cp .env.example .env.local
-# Add actual international WhatsApp number to .env.local
+# Set VITE_WHATSAPP_NUMBER in .env.local if you use WhatsApp
 npm run dev
 ```
 
-Open http://localhost:5173. Run `npm run build` to type-check and build.
+Check with `npm run typecheck` and `npm run build`. No hero images or client assets were copied from Agero. The abstract hero artwork uses only MaintyBox brand tokens and CSS/SVG. ScrollTrigger remains registered for later steps; the hero entrance uses `useGSAP` with reduced-motion support. WhatsApp CTA is disabled safely when no number is configured.
 
-## Design and behavior
-- Agero-inspired spacious composition (interpretation; exact animations not verifiable).
-- Desktop: wordmark, centered navigation, contact CTA. Mobile: overlay with Escape, focus wrapping, background scroll lock and route-close.
-- Sticky 88px header with subtle border and shadow after scrolling.
-- Reduced-motion option avoids animated transitions.
-- If `VITE_WHATSAPP_NUMBER` is unset or invalid, CTA is non-clickable and displays configuration guidance rather than a fictitious number.
-- Preview-only routes: `/`, `/portfolio`, `/services`, `/a-propos`, `/contact`.
-- No hero, actual portfolio, actual service pages, footer, or contact page has been built.
+## STEP 03 changes
 
-## Deployment
-SPA routes need a rewrite/fallback to index.html on DirectAdmin/Apache. A production hosting rewrite should be configured in the deployment step; it is not assumed by the Vite preview server.
+- Added `src/components/hero/Hero.tsx`
+- Added `src/components/hero/hero.css`
+- Modified `src/App.tsx` to render `<Hero />` at `/`
+- Kept STEP 02 Header/navigation and other route placeholders unchanged.
+
+The Agero-inspired editorial headline and floating artwork layout are original interpretations, not pixel-verified animation recreations.
