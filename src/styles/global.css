@@ -1,0 +1,32 @@
+@import 'tailwindcss';
+@import './tokens.css';
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; background: var(--color-light); color: var(--color-ink); font-family: var(--font-body); font-size: var(--text-body); line-height: 1.55; -webkit-font-smoothing: antialiased; }
+button, input, textarea, select { font: inherit; }
+button { cursor: pointer; }
+img, svg { display: block; max-width: 100%; }
+::selection { background: var(--color-accent); color: var(--color-ink); }
+:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 4px; }
+.container-site { width: min(100% - 2 * var(--page-gutter), var(--container-width)); margin-inline: auto; }
+.section-space { padding-block: var(--space-section); }
+.type-display, .type-h1, .type-h2, .type-h3 { font-family: var(--font-display); font-weight: 600; letter-spacing: -.055em; line-height: 1.02; }
+.type-display { font-size: var(--text-display); }
+.type-h1 { font-size: var(--text-h1); }
+.type-h2 { font-size: var(--text-h2); }
+.type-h3 { font-size: var(--text-h3); letter-spacing: -.035em; }
+.type-small { font-size: var(--text-small); }
+.type-label { font-size: var(--text-label); font-weight: 700; text-transform: uppercase; letter-spacing: .14em; }
+.btn { display: inline-flex; justify-content: center; align-items: center; gap: .65rem; border: 1px solid transparent; border-radius: 999px; min-height: 48px; padding: .8rem 1.4rem; font-size: var(--text-button); font-weight: 700; transition: background-color .2s, color .2s, border-color .2s, transform .2s; }
+.btn:hover { transform: translateY(-2px); }
+.btn-primary { background: var(--color-primary); color: var(--color-light); }
+.btn-primary:hover { background: #004F52; }
+.btn-secondary { background: transparent; color: var(--color-primary); border-color: var(--color-primary); }
+.btn-secondary:hover { background: var(--color-primary); color: var(--color-light); }
+.btn-accent { background: var(--color-accent); color: var(--color-ink); }
+.btn-accent:hover { background: #E6B439; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
