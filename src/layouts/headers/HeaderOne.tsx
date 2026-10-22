@@ -27,10 +27,20 @@ const HeaderOne = () => {
                            </div>
                         </div>
                      </div>
-                     <div className="col-lg-4 col-md-4 col-sm-4 col-5">
-                        <div className="logo text-center">
-                           <Link className="logo-1 mb-original-wordmark" to="/" aria-label="MaintyBox, accueil">MaintyBox<span>.</span></Link>
-                        </div>
+                    <div className="col-lg-4 col-md-4 col-sm-4 col-5">
+                     <div className="logo text-center">
+                        <Link
+                           className="logo-1 mb-original-wordmark"
+                           to="/"
+                           aria-label="MaintyBox, accueil"
+                        >
+                           <img
+                           src="/assets/img/logo/maintybox-logo-wordmark.svg"
+                           alt="MaintyBox"
+                           className="mb-logo"
+                           />
+                        </Link>
+                     </div>
                      </div>
                      <div className="col-lg-4 col-md-4 col-sm-4 col-2">
                         <div className="td-header-right text-end">
