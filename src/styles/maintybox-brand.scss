@@ -1,0 +1,34 @@
+/* MaintyBox brand foundation — Home One. */
+:root {
+  --maintybox-primary: #006A6E;
+  --maintybox-light: #FFFFFF;
+  --maintybox-secondary: #6BAB90;
+  --maintybox-accent: #F2C14E;
+  --maintybox-heading-font: "Bricolage Grotesque", sans-serif;
+  --maintybox-body-font: "Kumbh Sans", sans-serif;
+}
+
+body, button, input, select, textarea, p, a, li, label {
+  font-family: var(--maintybox-body-font);
+}
+h1, h2, h3, h4, h5, h6,
+.td-section-title, .td-hero-title {
+  font-family: var(--maintybox-heading-font);
+}
+
+::selection { background: var(--maintybox-secondary); color: #102B2B; }
+:focus-visible { outline: 3px solid var(--maintybox-accent); outline-offset: 3px; }
+
+/* Home One: original header geometry retained; only brand wordmark substituted. */
+.mb-original-wordmark {
+  display: inline-block;
+  color: var(--maintybox-primary);
+  font-family: var(--maintybox-heading-font);
+  font-weight: 800;
+  font-size: clamp(21px, 2.2vw, 31px);
+  letter-spacing: -0.065em;
+  white-space: nowrap;
+  line-height: 1.1;
+}
+.mb-original-wordmark span { color: var(--maintybox-accent); }
+.mb-original-wordmark:hover { color: var(--maintybox-primary); }

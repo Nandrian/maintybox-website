@@ -1,23 +1,69 @@
-# MaintyBox — STEP 03: Hero Section
+# React + TypeScript + Vite
 
-Continuation of STEP 02. Contains only an original editorial homepage Hero, with existing Header and minimal route placeholders.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Run on macOS
+Currently, two official plugins are available:
 
-```bash
-npm install
-cp .env.example .env.local
-# Set VITE_WHATSAPP_NUMBER in .env.local if you use WhatsApp
-npm run dev
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+
+```js
+export default tseslint.config([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+
+      // Remove tseslint.configs.recommended and replace with this
+      ...tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      ...tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      ...tseslint.configs.stylisticTypeChecked,
+
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
 
-Check with `npm run typecheck` and `npm run build`. No hero images or client assets were copied from Agero. The abstract hero artwork uses only MaintyBox brand tokens and CSS/SVG. ScrollTrigger remains registered for later steps; the hero entrance uses `useGSAP` with reduced-motion support. WhatsApp CTA is disabled safely when no number is configured.
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-## STEP 03 changes
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-- Added `src/components/hero/Hero.tsx`
-- Added `src/components/hero/hero.css`
-- Modified `src/App.tsx` to render `<Hero />` at `/`
-- Kept STEP 02 Header/navigation and other route placeholders unchanged.
-
-The Agero-inspired editorial headline and floating artwork layout are original interpretations, not pixel-verified animation recreations.
+export default tseslint.config([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```

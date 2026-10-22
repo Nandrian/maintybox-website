@@ -1,0 +1,24 @@
+
+
+
+// font url
+
+$font-url: 'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Kumbh+Sans:wght@100..900&display=swap';
+
+
+// font family
+$font-family: (
+    'ff': (
+        'body': '"Kumbh Sans", sans-serif',
+        'heading': '"Bricolage Grotesque", sans-serif',
+        'dm': '"Kumbh Sans", sans-serif',
+        'dm-sans': '"Kumbh Sans", sans-serif',
+        'manrope': '"Kumbh Sans", sans-serif',
+        'bebas': '"Kumbh Sans", sans-serif',
+        'teko': '"Kumbh Sans", sans-serif',
+        'rethink': '"Kumbh Sans", sans-serif',
+        'bellefair': '"Kumbh Sans", sans-serif',
+        'roboto': '"Kumbh Sans", sans-serif',
+        'fontawesome': '"Font Awesome 6 Pro"',
+    )
+);
